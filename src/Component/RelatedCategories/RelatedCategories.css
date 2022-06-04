@@ -1,12 +1,6 @@
-.thumbImgBox{   
-    color: black;   
-}
 
-.thumbImgBox:active {
-    color: red;
+.thumbImg:active{
+  border: 1px solid red;
 }
-
-.thumbImgBox[tabIndex]:focus {
-    color:blue;
-    outline: none;
-}
+.size-color:active{
+    border: 1px solid red;}

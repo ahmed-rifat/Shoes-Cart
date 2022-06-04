@@ -1,0 +1,12 @@
+.thumbImgBox{   
+    color: black;   
+}
+
+.thumbImgBox:active {
+    color: red;
+}
+
+.thumbImgBox[tabIndex]:focus {
+    color:blue;
+    outline: none;
+}

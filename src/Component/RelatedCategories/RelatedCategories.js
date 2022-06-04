@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import "./RelatedCategories.css"
 
 const RelatedCategories = () => {
     const [shoe, setShoe]= useState({});
-    const [color1, setColor1]= useState(' Black');
-    const [color2, setColor2]= useState(' Black-White');
-    const [color3, setColor3]= useState(' Black');
+    const [color1, setColor1]= useState(' Blue');
+    const [discountPrice, setDiscountPrice]= useState('21.41');
+    const [oldPrice, setOldPrice]= useState('38.22');
     console.log(shoe);
 
+    // priceDiscount
 
+     const shoe1DiscountedPrice = shoe?.variation?.skus?.[0].price?.discounted;
+     const shoe2DiscountedPrice = shoe?.variation?.skus?.[1].price?.discounted;
+     const shoe3DiscountedPrice = shoe?.variation?.skus?.[2].price?.discounted;
 
+    //  priceOld
+    const shoe1OldPrice = shoe?.variation?.skus?.[0].price?.old;
+    const shoe2OldPrice = shoe?.variation?.skus?.[1].price?.old;
+    const shoe3OldPrice = shoe?.variation?.skus?.[2].price?.old;
+     
+      console.log(shoe1OldPrice);
     // thumbNail
     const img1= shoe?.gallery?.[0]?.url;
     const img2= shoe?.gallery?.[1]?.url;
@@ -17,22 +28,33 @@ const RelatedCategories = () => {
     // ShoeSize
     
     const mainImg = document.getElementById('mainImg');
-    const mainColor = document.getElementById('mainColor');
     // const thumbImg = document.getElementById('thumbImg');
-    // console.log(thumbImg);
-    // console.log(mainImg);
+    // const thumbImgBox = document.getElementById('thumbImgBox');
+    
+    
 
     const changePicture1 =()=>{
         mainImg.src = img1;
-        mainColor.innerText=color1;
+        setColor1('Blue');
+        // mainPrice.innerText = shoe1DiscountedPrice;
+        setDiscountPrice(shoe1DiscountedPrice);
+        setOldPrice(shoe1OldPrice);
+        
     }
     const changePicture2 =()=>{
         mainImg.src = img2;
-        mainColor.innerText =color2;
+        setColor1('Blue-White')
+        setDiscountPrice(shoe2DiscountedPrice);
+        setOldPrice(shoe2OldPrice);
+
     }
     const changePicture3 =()=>{
         mainImg.src = img3;
-        mainColor.innerText= color3;
+        setColor1('Black');
+        setDiscountPrice(shoe3DiscountedPrice);
+        setOldPrice(shoe3OldPrice);
+        // mainPrice.innerText = shoe3DiscountedPrice;
+
     }
 
 
@@ -52,14 +74,14 @@ const RelatedCategories = () => {
                 <figure><img src={img1} id='mainImg' alt="Album"/></figure>
                 <div className="card-body">
                     <h2>{shoe.title}</h2>
-                    <h2 className="card-title">Price: </h2>
+                    <h2 id='mainPrice' className="card-title">Price: {discountPrice} <span className='line-through'>{oldPrice}</span>  </h2>
                     <p id='mainColor' className='card-title'>
-                     {color1} </p>
+                     Color: {color1} </p>
 
     {/* ThumbNail section start*/}
                          <div className='grid grid-cols-6 gap-4'>
-                         <div>
-                       <img onClick={changePicture1} id='thumbImg' className='w-32 h-20' src={img1} alt="" />
+                         <div className='thumbImgBox'>
+                       <img tabIndex="1" onClick={changePicture1} id='thumbImg' className='w-32 h-20' src={img1} alt="" />
                   </div>
                     <div>
                        <img onClick={changePicture2} id='thumbImg' className='w-32 h-20' src={img2} alt="" />
@@ -110,7 +132,7 @@ const RelatedCategories = () => {
              
              </div>
 
-              {/* shoeSize section start*/}
+              {/* shoeSize section End*/}
                 
                 </div>
                 </div>

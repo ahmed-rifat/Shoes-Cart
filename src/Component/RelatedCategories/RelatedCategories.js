@@ -30,8 +30,7 @@ const RelatedCategories = () => {
     const mainImg = document.getElementById('mainImg');
     // const shoeSize = document.getElementsByClassName('shoe-size');
     // console.log(shoeSize);
-    // const thumbImg = document.getElementById('thumbImg');
-    // const thumbImgBox = document.getElementById('thumbImgBox');
+    
     
     
     // price image clickable function start
@@ -111,16 +110,28 @@ const RelatedCategories = () => {
         <div>
                  
 
-                <div className="card lg:card-side bg-base-100 shadow-xl">
+                <div className="card lg:card-side bg-sky-400 shadow-xl">
                     
                 <figure><img src={img1} id='mainImg' alt="Album"/></figure>
                 <div className="card-body">
+                    {/* title section end*/}
+                    <div className='bg-white rounded-xl p-4'>
                     <h2 className='card-title'>Title: <span className='text-gray-400'>{shoe.title}</span></h2>
+                    </div>
+                    {/* title section end*/}
+
+
+                    {/* Price section start*/}
+                    <div className='bg-white rounded-xl p-4'>
                     <p id='mainPrice' className="card-title">Price: Rs.  {discountPrice} <span className='line-through decoration-red-800 text-gray-400'>Rs. {oldPrice}</span> <span className='text-red-400'>(50% OFF)</span> </p>
-                    <p id='mainColor' className='card-title'>
-                     Color: {color1} </p>
+                    </div>
+                    {/* Price section END*/}
+                    
 
     {/* ThumbNail section start*/}
+                     <div className='bg-white rounded-xl p-4'>
+                     <p id='mainColor' className='card-title mb-2'>
+                     Color: {color1} </p>
                          <div className='grid grid-cols-6 gap-4'>
                          <div className='thumbImg'>
                        <img tabIndex="1" onClick={changePicture1} className='w-32 h-20 ' src={img1} alt="" />
@@ -132,48 +143,53 @@ const RelatedCategories = () => {
                        <img onClick={changePicture3} className='w-32 h-20 ' src={img3} alt="" />
                   </div>
                          </div>
-                    <p id='mainSize' className='card-title'>Size: {size} </p>
+                    
 
+                     </div>
     {/* ThumbNail section END*/}
 
 
 
              {/* shoeSize section start*/}
 
-             <div className='grid grid-cols-5 gap-4'>
+             <div className=' bg-white rounded-xl p-4'>
+             <p id='mainSize' className='card-title'>Size: {size} </p>
+
+             <div className='grid grid-cols-5 gap-4 mt-5 bg-slate-50-rounded'>
              <div onClick={sizeShow} className="tabs tabs-boxed size-color">
-                <a  className="tab shoe-size">5</a> 
+                <a  className="tab">5</a> 
                 </div>
              <div onClick={sizeShow1} className="tabs tabs-boxed size-color">
                 <a className="tab">5.5</a> 
                 </div>
-             <div onClick={sizeShow2} className="tabs tabs-boxed">
+             <div onClick={sizeShow2} className="tabs tabs-boxed size-color">
                 <a className="tab ">6</a> 
                 </div>
-             <div onClick={sizeShow3} className="tabs tabs-boxed">
+             <div onClick={sizeShow3} className="tabs tabs-boxed size-color">
                 <a className="tab">6.5</a> 
                 </div>
-             <div onClick={sizeShow4} className="tabs tabs-boxed">
+             <div onClick={sizeShow4} className="tabs tabs-boxed size-color">
                 <a className="tab">7</a> 
                 </div>
-             <div onClick={sizeShow5} className="tabs tabs-boxed">
+             <div onClick={sizeShow5} className="tabs tabs-boxed size-color">
                 <a className="tab">7.5</a> 
                 </div>
-             <div onClick={sizeShow6} className="tabs tabs-boxed">
+             <div onClick={sizeShow6} className="tabs tabs-boxed size-color">
                 <a className="tab">8</a> 
                 </div>
-             <div onClick={sizeShow7} className="tabs tabs-boxed">
+             <div onClick={sizeShow7} className="tabs tabs-boxed size-color">
                 <a className="tab">8 wide</a> 
                 </div>
-             <div onClick={sizeShow8} className="tabs tabs-boxed">
+             <div onClick={sizeShow8} className="tabs tabs-boxed size-color">
                 <a className="tab">8.5</a> 
                 </div>
-             <div onClick={sizeShow9} className="tabs tabs-boxed">
+             <div onClick={sizeShow9} className="tabs tabs-boxed size-color">
                 <a className="tab">8.5 wide</a> 
                 </div>
              
              </div>
 
+             </div>
               {/* shoeSize section End*/}
                 
                 </div>

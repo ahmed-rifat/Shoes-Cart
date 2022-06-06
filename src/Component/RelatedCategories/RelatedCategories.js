@@ -28,8 +28,8 @@ const RelatedCategories = () => {
     // ShoeSize
     
     const mainImg = document.getElementById('mainImg');
-    // const shoeSize = document.getElementsByClassName('shoe-size');
-    // console.log(shoeSize);
+    // const shoeSize1 = document.getElementById('shoe-size1');
+    // console.log(shoeSize1?.innerText);
     
     
     
@@ -44,7 +44,7 @@ const RelatedCategories = () => {
     }
     const changePicture2 =()=>{
         mainImg.src = img2;
-        setColor1('Blue-White')
+        setColor1('Gray')
         setDiscountPrice(shoe2DiscountedPrice);
         setOldPrice(shoe2OldPrice);
 
@@ -115,21 +115,21 @@ const RelatedCategories = () => {
                 <figure><img src={img1} id='mainImg' alt="Album"/></figure>
                 <div className="card-body">
                     {/* title section end*/}
-                    <div className='bg-white rounded-xl p-4'>
+                    <div className='bg-white rounded-xl p-2'>
                     <h2 className='card-title'>Title: <span className='text-gray-400'>{shoe.title}</span></h2>
                     </div>
                     {/* title section end*/}
 
 
                     {/* Price section start*/}
-                    <div className='bg-white rounded-xl p-4'>
+                    <div className='bg-white rounded-xl p-2'>
                     <p id='mainPrice' className="card-title">Price: Rs.  {discountPrice} <span className='line-through decoration-red-800 text-gray-400'>Rs. {oldPrice}</span> <span className='text-red-400'>(50% OFF)</span> </p>
                     </div>
                     {/* Price section END*/}
                     
 
     {/* ThumbNail section start*/}
-                     <div className='bg-white rounded-xl p-4'>
+                     <div className='bg-white rounded-xl p-2'>
                      <p id='mainColor' className='card-title mb-2'>
                      Color: {color1} </p>
                          <div className='grid grid-cols-6 gap-4'>
@@ -152,7 +152,7 @@ const RelatedCategories = () => {
 
              {/* shoeSize section start*/}
 
-             <div className=' bg-white rounded-xl p-4'>
+             <div className=' bg-white rounded-xl p-2'>
              <p id='mainSize' className='card-title'>Size: {size} </p>
 
              <div className='grid grid-cols-5 gap-4 mt-5 bg-slate-50-rounded'>
@@ -160,7 +160,7 @@ const RelatedCategories = () => {
                 <a  className="tab">5</a> 
                 </div>
              <div onClick={sizeShow1} className="tabs tabs-boxed size-color">
-                <a className="tab">5.5</a> 
+                <a className="tab" id='shoe-size1'>5.5</a> 
                 </div>
              <div onClick={sizeShow2} className="tabs tabs-boxed size-color">
                 <a className="tab ">6</a> 
